@@ -16,3 +16,15 @@ server.on('request',function(request, response){
 });
 
 server.listen(7000);
+
+var events = require('events');
+var EventEmitter = events.EventEmitter;
+var logger = new EventEmitter();
+logger.on('error', function(message){
+  console.log('An error has occurred: ' + message);
+});
+logger.on('warning', function(message){
+  console.log('WARNING: ' + message);
+});
+logger.emit('error', 'A test error message');
+logger.emit('warning', 'A test warning message');
