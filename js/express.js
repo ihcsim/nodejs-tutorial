@@ -12,10 +12,9 @@ app.get('/tweets/:username',function(userRequest, userResponse){
     query:{screen_name:username, count:10}
   };
   var twitterURL = url.format(options);
-  /*  request(twitterURL, function(err, res, body){
+  request(twitterURL, function(err, res, body){
     var tweets = JSON.parse(body);
-    userResponse.render('tweets.ejs', {tweets:tweets, name:username});
-    });*/
-  request(twitterURL).pipe(userResponse);
+    userResponse.render('../views/tweets.ejs', {tweets:tweets, name:username});
+  });
 });
 app.listen(7000);
