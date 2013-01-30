@@ -1,3 +1,7 @@
+/*
+ * Retrieve the last 100 tweets of the specified user.
+ * To run, execute node express.js
+ */
 var url = require('url');
 var request = require('request');
 var express = require('express');
