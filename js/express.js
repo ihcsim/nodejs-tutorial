@@ -8,7 +8,7 @@ app.get('/tweets/:username',function(userRequest, userResponse){
     protocol:'http:',
     host:'api.twitter.com',
     pathname:'/1/statuses/user_timeline.json',
-    query:{screen_name:username, count:10}
+    query:{screen_name:username, count:100}
   };
   var twitterURL = url.format(options);
   request(twitterURL, function(err, res, body){
