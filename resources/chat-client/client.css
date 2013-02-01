@@ -1,0 +1,24 @@
+#messages{
+  border:1px solid lightgray;
+  margin:10px;
+  padding:10px;
+  min-height:300px;
+  max-width:600px;
+}
+
+div.message{
+  font-size:11pt;
+}
+
+div.title{
+  color:blue;
+}
+
+#panel{
+  margin:8px;
+}
+
+#outgoing-message{
+  width:400px;
+  border-radius:5px;
+}
