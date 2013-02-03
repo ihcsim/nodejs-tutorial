@@ -3,7 +3,13 @@ $(document).ready(function(){
   var server = io.connect(CHAT_SERVER);  
   server.on('welcome', showGreetings);
 
+  addWaterMark();
+
   function showGreetings(msg){
     $("#title").text(msg['greetings']);
+  }
+
+  function addWaterMark(){
+    $("#outgoing-message").watermark("Enter your message here");
   }
 });
