@@ -21,5 +21,10 @@ io.sockets.on('connection', function(client){
   });
   client.on('user-join', function(username){
     client.set('username', username);
+    var systemInfo = {
+      msgOwner:'System',
+      msgContent:'Your current username is ' + username
+    };
+    client.emit('info', systemInfo);
   });
 });

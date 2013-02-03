@@ -26,11 +26,21 @@ div.out-message{
   color:black;
 }
 
-#panel{
+div.info-message{
+  font-size:11pt;
+  color:green;
+}
+
+div.panel{
   margin:8px;
 }
 
 #outgoing-message{
   width:400px;
+  border-radius:5px;
+}
+
+#username{
+  width:200px;
   border-radius:5px;
 }

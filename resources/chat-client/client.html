@@ -9,9 +9,14 @@
       <div id='pre-connect'>Attempting to connect to chat server...</div>
       <div id='title'></div>
     </div>
-    <div id="panel">
-     <input type="text" id="outgoing-message" name="outgoing-message" autofocus="autofocus" />
-     <button type="button" id="send" name="send" value="send">Send</button>
+    <div class="panel">
+      <input type="text" id="outgoing-message" name="outgoing-message" autofocus="autofocus" />
+      <button type="button" id="send" name="send" value="send">Send</button>
+    </div>
+    <div class="panel">
+      Your username:&nbsp;
+      <input type="username" id="username" name="username" />
+      <button type="button" id="change" name="change" value="change">Change</button>
     </div>
   </body>
   <script src="../../node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
