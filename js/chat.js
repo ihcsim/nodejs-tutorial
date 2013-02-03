@@ -17,7 +17,7 @@ io.sockets.on('connection', function(client){
   function broadcastMessage(msg){
     client.get('username', function(err, username){
       if(!username)
-	  username = DEFAULT_USERNAME;
+        username = DEFAULT_USERNAME;
       var broadcastMsg = {
 	msgOwner:username,
         msgContent:msg
