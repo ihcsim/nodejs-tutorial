@@ -1,6 +1,8 @@
+var CHAT_SERVER = "http://localhost:7000'"
 $(document).ready(function(){
-  var server = io.connect('http://localhost:7000');
-  server.on('message', function(message){
-    $("#messages").append("<div class='message'" + message + "</div>");
+  var server = io.connect(CHAT_SERVER);
+  
+  server.on('welcome', function(msg){
+    $("#title").text(msg['greetings']);
   });
 });
