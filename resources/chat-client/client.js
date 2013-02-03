@@ -1,5 +1,4 @@
 var CHAT_SERVER = "http://localhost:7000"
-var DEFAULT_USERNAME = "Guest";
 $(document).ready(function(){
   var socket = io.connect(CHAT_SERVER);  
   socket.on('welcome', showGreetings);
@@ -42,8 +41,6 @@ $(document).ready(function(){
   function changeButtonOnClick(){
     $("#change").click(function(){
       var username = $("#username").val();
-      if(!username)
-        username = DEFAULT_USERNAME;      
       registerUsername(username);
     });
   }

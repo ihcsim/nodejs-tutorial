@@ -3,6 +3,7 @@
  * To run server, execute node chat.js
  * To run client, open up ../resources/chat-client/client.html from browser
  */
+var DEFAULT_USERNAME = 'Guest';
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app).listen(7000);
@@ -12,6 +13,8 @@ io.sockets.on('connection', function(client){
   client.emit('welcome', {greetings:'Welcome to Chat Room!'});
   client.on('message', function(msg){
     client.get('username', function(err, username){
+      if(!username)
+	  username = DEFAULT_USERNAME;
       var broadcastMsg = {
 	msgOwner:username,
         msgContent:msg
