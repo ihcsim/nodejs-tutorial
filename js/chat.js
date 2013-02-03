@@ -11,7 +11,17 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(client){
   client.emit('welcome', {greetings:'Welcome to Chat Room!'});
-  client.on('message', function(msg){
+  client.on('message', broadcastMessage);
+  client.on('user-join', function(username){
+    client.set('username', username);
+    var systemInfo = {
+      msgOwner:'System',
+      msgContent:'Your current username is ' + username
+    };
+    client.emit('info', systemInfo);
+  });
+
+  function broadcastMessage(msg){
     client.get('username', function(err, username){
       if(!username)
 	  username = DEFAULT_USERNAME;
@@ -21,13 +31,5 @@ io.sockets.on('connection', function(client){
       };
       client.broadcast.emit('message', broadcastMsg);
     });
-  });
-  client.on('user-join', function(username){
-    client.set('username', username);
-    var systemInfo = {
-      msgOwner:'System',
-      msgContent:'Your current username is ' + username
-    };
-    client.emit('info', systemInfo);
-  });
+  }
 });
