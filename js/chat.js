@@ -1,7 +1,7 @@
 /*
  * A chat server. Client codes can be found in ../resources/chat-client
  * To run server, execute node chat.js
- * To run client, open up ../resources/chat-client/client.html from browser
+ * To run client, navigate to ../resources/chat-client/client.html from browser
  */
 var DEFAULT_USERNAME = 'Guest';
 var express = require('express');
