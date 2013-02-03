@@ -1,5 +1,15 @@
+#pre-connect{
+  color:lightgray;
+  font-style:italic;
+}
+
+#title{
+  color:blue;
+}
+
 #messages{
   border:1px solid lightgray;
+  border-radius:5px;
   margin:10px;
   padding:10px;
   min-height:300px;
@@ -8,10 +18,6 @@
 
 div.message{
   font-size:11pt;
-}
-
-div.title{
-  color:blue;
 }
 
 #panel{
