@@ -1,6 +1,7 @@
 /*
- * A chat server
- * To run, execute node chat.js
+ * A chat server. Client codes can be found in ../resources/chat-client
+ * To run server, execute node chat.js
+ * To run client, open up ../resources/chat-client/client.html from browser
  */
 var express = require('express');
 var app = express();
@@ -9,4 +10,16 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(client){
   client.emit('welcome', {greetings:'Welcome to Chat Room!'});
+  client.on('message', function(msg){
+    client.get('username', function(err, username){
+      var broadcastMsg = {
+	msgOwner:username,
+        msgContent:msg
+      };
+      client.broadcast.emit('message', broadcastMsg);
+    });
+  });
+  client.on('user-join', function(username){
+    client.set('username', username);
+  });
 });

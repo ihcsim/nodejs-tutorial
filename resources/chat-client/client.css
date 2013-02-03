@@ -16,8 +16,14 @@
   max-width:600px;
 }
 
-div.message{
+div.in-message{
   font-size:11pt;
+  color:green;
+}
+
+div.out-message{
+  font-size:11pt;
+  color:black;
 }
 
 #panel{
