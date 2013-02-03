@@ -26,6 +26,7 @@ $(document).ready(function(){
     $("#send").click(function(){
       var msg = $("#outgoing-message").val();
       showOutgoingMessage(msg);
+      $("#outgoing-message").val('');
       socket.emit('message', msg);
     });
   }
