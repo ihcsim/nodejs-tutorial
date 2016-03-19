@@ -1,4 +1,4 @@
-node-tutorial
+nodejs-tutorial
 =============
 
 Some tutorial codes on [node.js](http://nodejs.org/).
